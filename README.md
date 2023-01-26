@@ -20,7 +20,7 @@ Electron process polls a device idle status. If the device in idle after **5 min
 # Tasks for develop
 
 - [x] Miner installation in docker
-- [ ] Validate miner aginst antivirus detection
+- [ ] Validate miner against antivirus detection
 - [ ] Develop usable UI
 - [ ] Move idle status poller to utility process
 - [ ] Config optimisation for miner
