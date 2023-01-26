@@ -1,46 +1,27 @@
-# Getting Started with Create React App
+# Crypto-Marketplace App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It's a proof of concept of electron-based application that provide miner marketplace functionality.
+This app can install monero miner in docker with user consent. Instaled miner state stored in json file in **~/defi-os/apps-registry.json**
 
-## Available Scripts
+## Installation process:
 
-In the project directory, you can run:
+- Provide your monero wallet address to text field
+- Click "Install Miner"
+- Look your miner in docker with provided container id or by name **defi-os-miner**
 
-### `npm start`
+## Miner configuration
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Your miner configured by default to mine with **xmrpool.eu** mining pool
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Miner execution
 
-### `npm test`
+Electron process polls a device idle status. If the device in idle after **5 minutes** the poller starts a miner container. After idle interuption the poller disables the container
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Tasks for develop
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [x] Miner installation in docker
+- [] Validate miner aginst antivirus detection
+- [] Develop usable UI
+- [] Move idle status poller to utility process
+- [] Config optimisation for miner
+- [] Config optimisation for docker container
