@@ -25,3 +25,4 @@ Electron process polls a device idle status. If the device in idle after **5 min
 - [ ] Move idle status poller to utility process
 - [ ] Config optimisation for miner
 - [ ] Config optimisation for docker container
+- [ ] Move constants to configuration (apps file, miner pool, idle interval, miner container name)
