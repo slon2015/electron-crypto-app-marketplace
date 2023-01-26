@@ -1,24 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import InstallButton from './components/install/component'
+import Dashboard from './components/dashboard/component'
 import './App.css';
+import { createUseStyles } from 'react-jss';
+
+const useStyles = createUseStyles({
+  AppContainer: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    justifyItems: 'center',
+    height: '100vh',
+    flexDirection: 'column',
+    alignItems: 'center',
+  }
+})
 
 function App() {
+  const styles = useStyles()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.AppContainer}>
+      <InstallButton/>
+      <Dashboard/>
     </div>
   );
 }
